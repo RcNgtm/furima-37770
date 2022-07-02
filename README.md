@@ -5,7 +5,6 @@
 | ----------------------- | ------- | -------------------------- |
 | nickname                | string  | null: false                |
 | email                   | string  | null: false, unique: true  |
-| password                | string  | null: false                |
 | encrypted_password      | string  | null: false                |
 | last_name               | string  | null: false                |
 | first_name              | string  | null: false                |
@@ -33,7 +32,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :history
+- has_one :history
 
 
 ## histories テーブル
@@ -41,12 +40,11 @@
 | ------------------------ | ---------- | ------------------------------ |
 | user                     | references | null: false, foreign_key: true |
 | item                     | references | null: false, foreign_key: true |
-| payment                  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
 - belongs_to :item
-- belongs_to :payment
+- has_one :payment
 
 
 ## payments テーブル
