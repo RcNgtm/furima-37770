@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
-  validates :email, presence: true
   VALID_PW = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password,
             format: {
@@ -20,6 +19,6 @@ class User < ApplicationRecord
             format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birth_date, presence: true
 
-  has_many :items
-  has_many :histories
+  # has_many :items
+  # has_many :histories
 end
