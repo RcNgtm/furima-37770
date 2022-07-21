@@ -19,6 +19,7 @@ class User < ApplicationRecord
             format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birth_date, presence: true
 
-  # has_many :items
+  # association
+  has_many :items
   # has_many :histories
 end
